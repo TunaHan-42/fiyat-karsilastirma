@@ -17,14 +17,14 @@ def yazdir():
             print("Lütfen sadece sayı giriniz\nHata mesajı: {}".format(hata))
     print("\n")
     t=0
-    while True:                                                                                                      # Sadece bir adet fonksiyon kullanacak yer buldum...
-        t=t+1                                                                                                        # ...belki ilerleyen aşamalarda başka fonksiyonlar yazabiliriz
+    while True:
+        t=t+1
         if t==secim:
-            print("  |","-"*120,"|",sep="")                                                                          # Fonksiyon içinde 1 adet try except kullanabildim...
-            print("  |Seçtiğiniz ürün: ",end="")                                                                     # ...projenin devamında 10a yakın try except var
+            print("  |","-"*120,"|",sep="")
+            print("  |Seçtiğiniz ürün: ",end="")
             cursor.execute("SELECT * FROM urunlertum WHERE etiket=={}".format(secim))
-            data=cursor.fetchall()                                                                                   # Tüm işlemleri veritabanı ile yaptığım için...
-            for i in data:                                                                                           # ...sözlük kullanacak yer bulamadım
+            data=cursor.fetchall()
+            for i in data:
                 print("|",i)
                 print("  |","-"*120,"|",sep="")
             while True:
